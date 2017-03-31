@@ -158,9 +158,8 @@ public class TracksListAdapter extends BaseRVAdapter<Track, TracksListAdapter.Re
     public String getSectionTitle(int position) {
         if(!(position < 0 || position >= getItemCount())) {
             return String.valueOf(getItem(position).getName().charAt(0));
-        }else {
-            return "";
         }
+        return "";
     }
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder {
