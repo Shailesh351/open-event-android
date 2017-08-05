@@ -95,7 +95,7 @@ public class GlobalSearchAdapter extends BaseRVAdapter<Object, RecyclerView.View
                 break;
             case LOCATION:
                 View location = inflater.inflate(R.layout.item_location, parent, false);
-                resultHolder = new LocationViewHolder(location, context);
+                resultHolder = new LocationViewHolder(location);
                 break;
             case DIVIDER:
                 View header;
@@ -133,7 +133,7 @@ public class GlobalSearchAdapter extends BaseRVAdapter<Object, RecyclerView.View
             case LOCATION:
                 LocationViewHolder locationSearchHolder = (LocationViewHolder) holder;
                 Microlocation location = (Microlocation) getItem(position);
-                locationSearchHolder.bindLocation(location);
+                //locationSearchHolder.bindLocation(location);
                 break;
             case DIVIDER:
                 DividerViewHolder resultTypeViewHolder = (DividerViewHolder) holder;

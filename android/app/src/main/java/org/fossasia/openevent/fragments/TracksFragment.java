@@ -57,7 +57,6 @@ public class TracksFragment extends BaseFragment implements SearchView.OnQueryTe
     final private String SEARCH = "searchText";
 
     private List<Track> mTracks = new ArrayList<>();
-    private FastAdapter fastAdapter;
     private GenericItemAdapter<Track, TrackItem> trackItemsAdapter;
 
     @BindView(R.id.tracks_swipe_refresh) SwipeRefreshLayout swipeRefreshLayout;
@@ -121,7 +120,7 @@ public class TracksFragment extends BaseFragment implements SearchView.OnQueryTe
     }
 
     private void setUpRecyclerView() {
-        fastAdapter = new FastAdapter();
+        FastAdapter fastAdapter = new FastAdapter();
         fastAdapter.setHasStableIds(true);
 
         StickyHeaderAdapter stickyHeaderAdapter = new StickyHeaderAdapter();

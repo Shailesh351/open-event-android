@@ -9,6 +9,7 @@ import com.mikepenz.fastadapter.AbstractAdapter;
 import com.mikepenz.fastadapter.IItem;
 
 import org.fossasia.openevent.R;
+import org.fossasia.openevent.adapters.items.LocationItem;
 import org.fossasia.openevent.adapters.items.TrackItem;
 import org.fossasia.openevent.adapters.viewholders.HeaderViewHolder;
 import org.fossasia.openevent.utils.Utils;
@@ -24,6 +25,8 @@ public class StickyHeaderAdapter extends AbstractAdapter implements StickyRecycl
 
         if (item instanceof TrackItem && !Utils.isEmpty(((TrackItem) item).getModel().getName())) {
             return ((TrackItem) item).getModel().getName().toUpperCase().charAt(0);
+        } else if (item instanceof LocationItem && !Utils.isEmpty(((LocationItem) item).getModel().getName())) {
+            return ((LocationItem) item).getModel().getName().toUpperCase().charAt(0);
         }
         return 0;
     }
@@ -43,6 +46,8 @@ public class StickyHeaderAdapter extends AbstractAdapter implements StickyRecycl
 
         if (item instanceof TrackItem && !Utils.isEmpty(((TrackItem) item).getModel().getName())) {
             textView.setText(String.valueOf(((TrackItem) item).getModel().getName().toUpperCase().charAt(0)));
+        } else if (item instanceof LocationItem && !Utils.isEmpty(((LocationItem) item).getModel().getName())) {
+            textView.setText(String.valueOf(((LocationItem) item).getModel().getName().toUpperCase().charAt(0)));
         }
     }
 
